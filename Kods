@@ -1,0 +1,97 @@
+// PROGRAMLAMA DİLLERİ DERS PROJESİ
+
+
+#include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+#include <cstdlib>
+#include <ctime>
+#include <ctype.h>
+
+using namespace std;	
+
+class cagır
+{
+private:
+	string semt;
+
+public:
+	cagır()
+	{
+		semt = "bakırköy";
+
+	}
+
+	cagır(string semt)
+	{
+		this->semt = semt;
+
+	}
+
+	int a[38];
+	int eb = 180, ek = 10;
+	string p[38]= { "adalar","arnavutkoy","atasehir","avcilar","bagcilar"
+		,"bahcelievler","basaksehir","bayrampasa",
+		"besiktas","beylikduzu","beyoglu","buyukcekmece","beykoz",
+		"catalca","cekmekoy","esenler","esenyurt",
+		"eyup","fatih","gaziosmanpasa","gungoren","kadikoy",
+		"kagıthane","kartal","kucukcekmece","maltepe",
+		"pendik","sancaktepe","sariyer","silivri","sultanbeyli",
+		"sultangazi","sile","sisli","tuzla","uskudar","umraniye",
+		"zeytinburnu" };
+	
+	void dogrumu()
+	{
+		for (int i = 0; i < 38; i++)
+		{
+			if (p[i] == this->semt)
+			{
+				cout << "-------------------------------------------------" << endl;
+				cout << "IKU Taksi :" << a[i] * 0.35<< " TL civarInda tutar." << endl;
+				cout << "Sahsi Arac Maliyeti :" << a[i] * 0.60 << " TL civarInda tutar." << endl;
+				cout << "Taksi Ucreti :" << a[i] * 1.6 << " TL civarInda tutar." << endl;
+				cout << "Yurume Mesafesi :" << a[i]<<"km Yurumeniz Gerekir." << endl;
+				cout << "Uber Ucreti :" << a[i] * 2 << " TL civarInda tutar." << endl;
+				cout << endl;
+				cout << "Biz IKU Taksi Ile Gitmenizi Oneriyoruz  :)" << endl;
+			}
+			
+
+		}
+			
+	}
+
+	void ekle(int[]) {
+		srand(time(0));
+		for (int i = 0; i < 38; i++)
+		{
+			a[i] = ek + (rand() % (eb - ek + 1));//rastegele sayıları a[i] ye eklemek için
+
+		}
+	}
+
+};
+
+int main()
+{
+	int* a;
+	int size = 38;
+	a = new int[size];
+	string s;
+	cout << "Lutfen Turkce Karakter Kullanmadan Ve Kucuk Harflerle Ilce Ismini Yaziniz..." << endl;
+	cout << "Nereye Gitmek Istiyorsunuz ?" << endl;
+	cout << "-------------------------------------------------" << endl;
+	cin >> s;
+	cagır cagır(s);
+	cagır.ekle(a);
+	cagır.dogrumu();
+
+
+	delete[] a;
+
+	system("Pause");
+	
+	return 0;
+}
+
+
