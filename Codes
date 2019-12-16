@@ -8,7 +8,7 @@
 #include <ctime>
 #include <ctype.h>
 
-using namespace std;	
+using namespace std;
 
 class cagır
 {
@@ -29,8 +29,8 @@ public:
 	}
 
 	int a[38];
-	int eb = 90, ek = 10;
-	string p[38]= { "adalar","arnavutkoy","atasehir","avcilar","bagcilar"
+	int eb = 100, ek = 10;
+	string p[38] = { "adalar","arnavutkoy","atasehir","avcilar","bagcilar"
 		,"bahcelievler","basaksehir","bayrampasa",
 		"besiktas","beylikduzu","beyoglu","buyukcekmece","beykoz",
 		"catalca","cekmekoy","esenler","esenyurt",
@@ -39,7 +39,7 @@ public:
 		"pendik","sancaktepe","sariyer","silivri","sultanbeyli",
 		"sultangazi","sile","sisli","tuzla","uskudar","umraniye",
 		"zeytinburnu" };
-	
+
 	void dogrumu()
 	{
 		for (int i = 0; i < 38; i++)
@@ -47,18 +47,18 @@ public:
 			if (p[i] == this->semt)
 			{
 				cout << "-------------------------------------------------" << endl;
-				cout << "IKU Taksi :" << a[i] * 0.35<< " TL civarInda tutar." << endl;
+				cout << "IKU Taksi :" << a[i] * 0.35 << " TL civarInda tutar." << endl;
 				cout << "Sahsi Arac Maliyeti :" << a[i] * 0.60 << " TL civarInda tutar." << endl;
-				cout << "Taksi Ucreti :" << a[i] * 1.6 << " TL civarInda tutar." << endl;
-				cout << "Yurume Mesafesi :" << a[i]<<"km Yurumeniz Gerekir." << endl;
-				cout << "Uber Ucreti :" << a[i] * 2 << " TL civarInda tutar." << endl;
+				cout << "Taksi Ucreti :" << a[i] * 1.2 << " TL civarInda tutar." << endl;
+				cout << "Yurume Mesafesi :" << a[i] << " km Yurumeniz Gerekir." << endl;
+				cout << "Uber Ucreti :" << a[i] * 1.5 << " TL civarInda tutar." << endl;
 				cout << endl;
 				cout << "Biz IKU Taksi Ile Gitmenizi Oneriyoruz  :)" << endl;
 			}
-			
+
 
 		}
-			
+
 	}
 
 	void ekle(int[]) {
@@ -78,20 +78,32 @@ int main()
 	int size = 38;
 	a = new int[size];
 	string s;
-	cout << "Lutfen Turkce Karakter Kullanmadan Ve Kucuk Harflerle Ilce Ismini Yaziniz..." << endl;
-	cout << "Nereye Gitmek Istiyorsunuz ?" << endl;
-	cout << "-------------------------------------------------" << endl;
-	cin >> s;
-	cagır cagır(s);
-	cagır.ekle(a);
-	cagır.dogrumu();
+	while (true)
+	{
+		cout << "-------------------------------------------------" << endl;
+		cout << "Lutfen Turkce Karakter Kullanmadan Ve Kucuk Harflerle Ilce Ismini Yaziniz..." << endl;
+		cout << "Programdan Cikis Yapmak  Icin 'q' ya Basin..." << endl;
+		cout << "Nereye Gitmek Istiyorsunuz ?" << endl;
+		cout << "-------------------------------------------------" << endl;
+		cin >> s;
+		if (s == "q")
+		{
+			cout << "Cikis Yapiliyor ... " << endl;
+			break;
 
-
+		}
+		else
+		{
+			
+			cagır cagır(s);
+			cagır.ekle(a);
+			cagır.dogrumu();
+		}
+	}
 	delete[] a;
 
 	system("Pause");
-	
+
 	return 0;
 }
-
 
