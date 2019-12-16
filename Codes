@@ -29,7 +29,7 @@ public:
 	}
 
 	int a[38];
-	int eb = 180, ek = 10;
+	int eb = 90, ek = 10;
 	string p[38]= { "adalar","arnavutkoy","atasehir","avcilar","bagcilar"
 		,"bahcelievler","basaksehir","bayrampasa",
 		"besiktas","beylikduzu","beyoglu","buyukcekmece","beykoz",
